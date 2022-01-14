@@ -19,5 +19,5 @@ public interface EmployeeService {
 
     boolean delete(Employee employee);
 
-//    Employee searchEmployee(String name, int age, double salary);
+    List<Employee> searchEmployee(String name, int age, double salary);
 }

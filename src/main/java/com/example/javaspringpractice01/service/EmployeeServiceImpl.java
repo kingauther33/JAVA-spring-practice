@@ -40,8 +40,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         return true;
     }
 
-//    @Override
-//    public Employee searchEmployee(String name, int age, double salary) {
-//        return employeeRepository.findEmployee(name, age, salary);
-//    }
+    @Override
+    public List<Employee> searchEmployee(String name, int age, double salary) {
+        return employeeRepository.findEmployee(name, age, salary);
+    }
 }

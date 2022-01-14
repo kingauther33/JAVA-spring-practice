@@ -86,12 +86,12 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.GET, path="search")
     public ResponseEntity<Object> searchEmployee(
-            @RequestParam(defaultValue = "") String name,
-            @RequestParam(defaultValue = "0") int age,
-            @RequestParam(defaultValue = "0") double salary) {
+            @RequestParam(defaultValue = "Nhân viên 1") String name,
+            @RequestParam(defaultValue = "26") int age,
+            @RequestParam(defaultValue = "30000") double salary) {
 
-            Employee employee = employeeRepository.findEmployee(name, age, salary);
-            if (employee == null) {
+            List<Employee> employee = employeeService.searchEmployee(name, age, salary);
+            if (employee.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }
 
